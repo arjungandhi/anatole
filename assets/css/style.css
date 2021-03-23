@@ -1161,3 +1161,29 @@ print {
 }
 
 /* (CONTACT) FORM END */
+
+/*scroll bar*/
+/*
+ *  STYLE 2
+ */
+
+ ::-webkit-scrollbar-track
+ {
+  -webkit-box-shadow: inset 0 0 6px #3b4252;
+  box-shadow: inset 0 0 6p #3b4252;
+   border-radius: 8px;
+   background-color: transparent;
+ }
+ 
+::-webkit-scrollbar
+ {
+   width: 6px;
+   height: 6px;
+   background-color: #3b4252;
+ }
+ 
+::-webkit-scrollbar-thumb
+ {
+   border-radius: 8px;
+   background-color: #4c566a;
+ }
