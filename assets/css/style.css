@@ -196,12 +196,12 @@ a:active {
 .content {
     height: auto;
     float: right;
-    width: 60%;
+    width: 70%;
     margin-top: 60px;
 }
 
 .page-top {
-    width: 60%;
+    width:70%;
     position: fixed;
     right: 0;
     z-index: 3;
@@ -273,7 +273,7 @@ a:active {
 }
 
 .sidebar {
-    width: 40%;
+    width:30%;
     -webkit-background-size: cover;
     background-size: cover;
     background-color: var(--bg-color);
@@ -447,9 +447,9 @@ a:active {
 }
 
 .post figure {
-    max-width: 100%;
+    max-width: 61%;
     height: auto;
-    margin: 0;
+    margin: 1em auto;
     text-align: center;
 }
 
