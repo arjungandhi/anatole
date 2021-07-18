@@ -17,11 +17,32 @@
                         <span class="reading-time">{{ i18n "reading_time" .ReadingTime }}</span>
                     </div>
                 {{ end }}
+                {{- if (isset .Params "summary") -}}
+                <div class="toggle-container">
+                    <script>
+                        function switch_view(check){
+                        if(check.checked){
+                            document.getElementById('tldr-content').style.display = "block";
+                            document.getElementById('content').style.display = "none";
+                        } else {
+                            document.getElementById('tldr-content').style.display = "none";
+                            document.getElementById('content').style.display = "block";
+                        }
+                    }
+                    </script>
+                tldr:
+                <input class="toggle" oninput="switch_view(this)" id="tldr-toggle" type="checkbox" />
+                {{- end -}}
+            </div>
+            </div>
+            <hr/>
+            <div id="tldr-content">
+            {{.Summary}}
             </div>
 
-            <hr/>
-
+            <div id="content">
             {{ .Content }}
+            </div>
 
             {{- if (eq .Params.contact true) -}}
               {{- partial "contact.html" . -}}
