@@ -148,6 +148,7 @@ html[data-theme='nord-dark'] {
   --chr-kp-color: #88C0D0;
   --chr-kr-color: #88C0D0;
   --chr-kt-color: #88C0D0;
+  --chr-n-color: #ECEFF4;
   --chr-na-color: #A3BE8C;
   --chr-nc-color: #A3BE8C;
   --chr-no-color: #88C0D0;
@@ -155,6 +156,9 @@ html[data-theme='nord-dark'] {
   --chr-ne-color: #A3BE8C;
   --chr-nf-color: #A3BE8C;
   --chr-nx-color: #A3BE8C;
+  --chr-fm-color: #ECEFF4;
+  --chr-nl-color: #ECEFF4;
+  --chr-nn-color: #ECEFF4;
   --chr-nt-color: #BF616A;
   --chr-l-color: #B48EAD;
   --chr-ld-color: #EBCB8B;
