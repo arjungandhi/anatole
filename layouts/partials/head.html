@@ -51,6 +51,14 @@
     {{ end -}}
 
     <!-- JavaScript -->
+
+    {{ $tldr := resources.Get "js/tldr.js" }}
+    {{ $securetldr := $tldr |  resources.Minify | resources.Fingerprint }}
+    <script type="text/javascript"
+    src="{{ $securetldr.Permalink }}"
+    integrity="{{ $securetldr.Data.Integrity }}"
+    crossorigin="anonymous"></script>
+
     {{ $anatoleHeader := resources.Get "js/anatole-header.js" }}
     {{ $secureHeaderJS := $anatoleHeader |  resources.Minify | resources.Fingerprint }}
     <script type="text/javascript"
@@ -101,5 +109,6 @@
     {{ template "_internal/opengraph.html" . }}
     {{- end -}}
     {{- end }}
+
 
 </head>
