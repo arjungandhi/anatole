@@ -37,6 +37,11 @@
     integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" 
     crossorigin="anonymous" />
 
+    <link rel="stylesheet" 
+    href="https://cdn.jsdelivr.net/npm/google-photos-yoinker@1.0.1/src/yoink.min.css" 
+    crossorigin="anonymous" />
+
+
     <!-- Favicons -->
     <link rel="shortcut icon" href="{{ .Site.Params.favicon | absURL }}favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" sizes="180x180" href="{{ .Site.Params.favicon | absURL }}apple-touch-icon.png">
@@ -51,6 +56,11 @@
     {{ end -}}
 
     <!-- JavaScript -->
+ 
+    <script type="module">
+        import embed_google_photos from "https://cdn.jsdelivr.net/npm/google-photos-yoinker@1.0.1/src/yoink.min.js"
+        window.photo_function = embed_google_photos
+    </script>
 
     {{ $tldr := resources.Get "js/tldr.js" }}
     {{ $securetldr := $tldr |  resources.Minify | resources.Fingerprint }}
