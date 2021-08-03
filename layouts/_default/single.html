@@ -17,21 +17,29 @@
                         <span class="reading-time">{{ i18n "reading_time" .ReadingTime }}</span>
                     </div>
                 {{ end }}
-                {{- if (isset .Params "summary") -}}
-                <div class="toggle-container">
-                tldr:
-                <input class="toggle" oninput="switch_view(this)" id="tldr-toggle" type="checkbox" />
+                {{- $sectionDelimiter := "<end-tldr>" -}}
+                {{- $contentSections := split .Content $sectionDelimiter -}}
+                {{- if gt (len $contentSections) 1 -}}
+                    <div class="toggle-container">
+                    tldr:
+                    <input class="toggle" oninput="switch_view(this)" id="tldr-toggle" type="checkbox" />
                 {{- end -}}
             </div>
             </div>
             <hr/>
-            <div id="tldr-content">
-            {{.Summary}}
-            </div>
 
-            <div id="content">
-            {{ .Content }}
+            {{- if gt (len $contentSections) 1 -}}
+            <div id="tldr-content">
+                {{ index $contentSections 0 | .RenderString }}
             </div>
+            <div id="content">
+                {{ index $contentSections 1 | .RenderString}}
+            </div>
+            {{- else -}}
+              <div id="content">
+                {{ .Content }}
+              </div>
+            {{- end -}}
 
             {{- if (eq .Params.contact true) -}}
               {{- partial "contact.html" . -}}
